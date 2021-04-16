@@ -23,7 +23,7 @@ import com.fileRead.fileUpAndRead;
 /**
  * Servlet implementation class upFileSrv
  */
-@WebServlet("/")
+@WebServlet("/upFileSrv")
 @MultipartConfig(
         fileSizeThreshold   = 1024 * 1024 * 1,  // 1 MB
         maxFileSize         = 1024 * 1024 * 10, // 10 MB
