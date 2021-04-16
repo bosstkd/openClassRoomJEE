@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +23,13 @@ import com.fileRead.fileUpAndRead;
 /**
  * Servlet implementation class upFileSrv
  */
-@WebServlet("/upFileSrv")
+@WebServlet("/")
+@MultipartConfig(
+        fileSizeThreshold   = 1024 * 1024 * 1,  // 1 MB
+        maxFileSize         = 1024 * 1024 * 10, // 10 MB
+        maxRequestSize      = 1024 * 1024 * 15, // 15 MB
+        location            = "C:/Uploads"
+)
 public class upFileSrv extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
